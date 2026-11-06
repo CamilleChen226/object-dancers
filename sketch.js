@@ -17,7 +17,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   // ...except to adjust the dancer's name on the next line:
-  dancer = new chick (width / 2, height / 2);
+  dancer = new chick (width / 2, height);
 }
 
 function draw() {
@@ -35,6 +35,8 @@ class chick{
   constructor(startX, startY) {
     this.x = startX;
     this.y = startY;
+    this.radiusX = 100;
+    this.radiusY = 50;
     
     //body
     this.xB = 0;
@@ -71,6 +73,10 @@ class chick{
 
   }
   update() {
+    //move
+    this.x = width/2 + cos(frameCount*0.05) * this.radiusX;
+    this.y = height/2 + sin(frameCount*0.05) * this.radiusY;
+
     //body
     this.yB = 0+ sin(frameCount*0.3)*10;
     this.widthB = 100 + cos(frameCount * 0.6) * 10;

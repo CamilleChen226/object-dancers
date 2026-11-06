@@ -17,7 +17,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   // ...except to adjust the dancer's name on the next line:
-  dancer = new chick (width / 2, height);
+  dancer = new chick (width / 2, height/2);
 }
 
 function draw() {
